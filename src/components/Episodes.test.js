@@ -604,7 +604,7 @@ const res = {
   },
 };
 
-test("App renders and loads data without error", async () => {
+test("App renders and loads Episode data without error", async () => {
   fetchShow.mockResolvedValueOnce(res);
 
   await act(async () => {
