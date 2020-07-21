@@ -5,7 +5,7 @@ import { fetchShow } from "./api/fetchShow";
 import { act } from "react-dom/test-utils";
 
 jest.mock("./api/fetchShow");
-console.log(fetchShow);
+// console.log(fetchShow);
 
 const res = {
   data: {
@@ -603,7 +603,7 @@ const res = {
   },
 };
 
-test("renders app without error", async () => {
+test("App renders and loads data without error", async () => {
   fetchShow.mockResolvedValueOnce(res);
 
   await act(async () => {
@@ -611,6 +611,8 @@ test("renders app without error", async () => {
   });
 
   screen.debug();
+
+  expect(screen.findByText(/select a season/i));
 });
 
 // test("show data renders", () => {});
